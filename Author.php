@@ -5,18 +5,20 @@
         // Propriétés
         private string $_firstName;
         private string $_lastName;
+        private array $_bookList;
 
         // Constructeur
         public function __construct(string $firstName, string $lastName) {
             $this->_firstName = $firstName;
             $this->_lastName = $lastName;
+            $this->_bookList = [];
         }
 
         // Accesseurs/Mutateurs
-        public function getFirstName() {
+        public function getFirstName(): string {
             return $this->_firstName;
         }
-        public function getLastName() {
+        public function getLastName(): string {
             return $this->_lastName; 
         }
 
@@ -27,13 +29,16 @@
             $this->_lastName = $lastName;
         }
 
-
         // Méthodes
+        public function addBookToList(Book $book) {
+            $this->_bookList[] = $book;
+        }
+        public function afficherBibliographie(): array {
+            return $this->$_bookList;
+        }
+
         public function __toString() {
             return "Auteur: " . $this->getFirstName() . " " . $this->getLastName() . "<br>";
         }
-
     }
-
-
 ?>
