@@ -1,0 +1,7 @@
+.bibliographyDiv {
+    border: 2px solid blue;
+    width: fit-content;
+    border-radius: 5px;
+    padding: 20px 20px;
+    background-color: rgb(33 127 255 / 20%);
+}

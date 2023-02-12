@@ -32,13 +32,28 @@
         // Méthodes
         public function addBookToList(Book $book) {
             $this->_bookList[] = $book;
+            echo "<span style='color:red;'>** &nbsp; Le livre \"" . $book->getTitle() . "\" a bien été ajouté à l'auteur " . $this->getFirstName() . " " . $this->getLastName() . "</span><br>";
         }
-        public function afficherBibliographie(): array {
-            return $this->$_bookList;
+        public function addMultipleBooksToList(array $books) {
+            $titles = [];
+            foreach($books as $book) {
+                $this->_bookList[] = $book;
+                $titles[] = "\"" . $book->getTitle() . "\"";
+            }
+            echo "<span style='color:red;'>** &nbsp; " . count($books) . " livres ont été ajouté à l'auteur " . $this->getFirstName() . " " . $this->getLastName() . "(". implode(", ", $titles) .")</span><br>";
         }
 
+        public function printBibliography() {
+            echo "<br><div class='bibliographyDiv'><span style='font-weight:bold; color:blue;'>Bibliographie de " . $this->getFirstName() . " " . $this->getLastName() . ": </span><br>" . implode(" ",$this->_bookList) . "</div>";
+        }
+
+
+
+
+
+
         public function __toString() {
-            return "Auteur: " . $this->getFirstName() . " " . $this->getLastName() . "<br>";
+            return "<span style='font-weight:bold; color:Blue;'>Auteur:</span> " . $this->getFirstName() . " " . $this->getLastName() . "<br>";
         }
     }
 ?>

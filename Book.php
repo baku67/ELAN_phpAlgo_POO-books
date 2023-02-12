@@ -66,8 +66,17 @@
         }
 
 
+
+
+
+
+
+
+
+
+
         public function __toString() {
-            return "Livre: \"" . $this->getTitle() . "\"<br>" . $this->getNbrOfPages() . " pages<br>Publication: " . $this->getPublicationYear() . "<br>Prix: " . $this->getPrice() . " " . $this->getCurrency() . "<br>Auteur: " . $this->printAuthor();
+            return "<span style='font-weight:bold; color:#00b200;'>Livre:</span> \"" . $this->getTitle() . "\"<br>" . $this->getNbrOfPages() . " pages<br>Année de publication: " . $this->getPublicationYear() . "<br>Prix: " . $this->getPrice() . " " . $this->getCurrency() . "<br>Auteur: " . $this->printAuthor() . "<br><br>";
         }
 
     }
